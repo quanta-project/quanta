@@ -250,41 +250,41 @@ qt6_add_lrelease(bitcoinqt
   OPTIONS -silent
 )
 
-add_executable(bitcoin-qt
+add_executable(quanta-qt
   main.cpp
   ../init/bitcoin-qt.cpp
 )
 
-add_windows_resources(bitcoin-qt res/bitcoin-qt-res.rc)
-add_windows_application_manifest(bitcoin-qt)
+add_windows_resources(quanta-qt res/bitcoin-qt-res.rc)
+add_windows_application_manifest(quanta-qt)
 
-target_link_libraries(bitcoin-qt
+target_link_libraries(quanta-qt
   core_interface
   bitcoinqt
   bitcoin_node
 )
 
-import_plugins(bitcoin-qt)
-install_binary_component(bitcoin-qt HAS_MANPAGE)
+import_plugins(quanta-qt)
+install_binary_component(quanta-qt HAS_MANPAGE)
 if(WIN32)
-  set_target_properties(bitcoin-qt PROPERTIES WIN32_EXECUTABLE TRUE)
+  set_target_properties(quanta-qt PROPERTIES WIN32_EXECUTABLE TRUE)
 endif()
 
 if(ENABLE_IPC)
-  add_executable(bitcoin-gui
+  add_executable(quanta-gui
     main.cpp
     ../init/bitcoin-gui.cpp
   )
-  target_link_libraries(bitcoin-gui
+  target_link_libraries(quanta-gui
     core_interface
     bitcoinqt
     bitcoin_node
     bitcoin_ipc
   )
-  import_plugins(bitcoin-gui)
-  install_binary_component(bitcoin-gui)
+  import_plugins(quanta-gui)
+  install_binary_component(quanta-gui)
   if(WIN32)
-    set_target_properties(bitcoin-gui PROPERTIES WIN32_EXECUTABLE TRUE)
+    set_target_properties(quanta-gui PROPERTIES WIN32_EXECUTABLE TRUE)
   endif()
 endif()
 

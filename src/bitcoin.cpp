@@ -20,26 +20,26 @@ const TranslateFn G_TRANSLATION_FUN{nullptr};
 static constexpr auto HELP_USAGE = R"(Usage: %s [OPTIONS] COMMAND...
 
 Options:
-  -m, --multiprocess     Run multiprocess binaries bitcoin-node, bitcoin-gui.
-  -M, --monolithic       Run monolithic binaries bitcoind, bitcoin-qt. (Default behavior)
+  -m, --multiprocess     Run multiprocess binaries quanta-node, quanta-gui.
+  -M, --monolithic       Run monolithic binaries quantad, quanta-qt. (Default behavior)
   -v, --version          Show version information
   -h, --help             Show this help message
 
 Commands:
-  gui [ARGS]     Start GUI, equivalent to running 'bitcoin-qt [ARGS]' or 'bitcoin-gui [ARGS]'.
-  node [ARGS]    Start node, equivalent to running 'bitcoind [ARGS]' or 'bitcoin-node [ARGS]'.
-  rpc [ARGS]     Call RPC method, equivalent to running 'bitcoin-cli -named [ARGS]'.
-  wallet [ARGS]  Call wallet command, equivalent to running 'bitcoin-wallet [ARGS]'.
-  tx [ARGS]      Manipulate hex-encoded transactions, equivalent to running 'bitcoin-tx [ARGS]'.
+  gui [ARGS]     Start GUI, equivalent to running 'quanta-qt [ARGS]' or 'quanta-gui [ARGS]'.
+  node [ARGS]    Start node, equivalent to running 'quantad [ARGS]' or 'quanta-node [ARGS]'.
+  rpc [ARGS]     Call RPC method, equivalent to running 'quanta-cli -named [ARGS]'.
+  wallet [ARGS]  Call wallet command, equivalent to running 'quanta-wallet [ARGS]'.
+  tx [ARGS]      Manipulate hex-encoded transactions, equivalent to running 'quanta-tx [ARGS]'.
   help [-a]      Show this help message. Include -a or --all to show additional commands.
 )";
 
 static constexpr auto HELP_EXTRA = R"(
 Additional less commonly used commands:
-  bench [ARGS]      Run bench command, equivalent to running 'bench_bitcoin [ARGS]'.
-  chainstate [ARGS] Run bitcoin kernel chainstate util, equivalent to running 'bitcoin-chainstate [ARGS]'.
-  test [ARGS]       Run unit tests, equivalent to running 'test_bitcoin [ARGS]'.
-  test-gui [ARGS]   Run GUI unit tests, equivalent to running 'test_bitcoin-qt [ARGS]'.
+  bench [ARGS]      Run bench command, equivalent to running 'bench_quanta [ARGS]'.
+  chainstate [ARGS] Run quanta kernel chainstate util, equivalent to running 'quanta-chainstate [ARGS]'.
+  test [ARGS]       Run unit tests, equivalent to running 'test_quanta [ARGS]'.
+  test-gui [ARGS]   Run GUI unit tests, equivalent to running 'test_quanta-qt [ARGS]'.
 )";
 
 struct CommandLine {
@@ -69,11 +69,11 @@ int main(int argc, char* argv[])
             if (cmd.show_help_all) tfm::format(std::cout, HELP_EXTRA);
             return cmd.show_help ? EXIT_SUCCESS : EXIT_FAILURE;
         } else if (cmd.command == "gui") {
-            args.emplace_back(cmd.use_multiprocess ? "bitcoin-gui" : "bitcoin-qt");
+            args.emplace_back(cmd.use_multiprocess ? "quanta-gui" : "quanta-qt");
         } else if (cmd.command == "node") {
-            args.emplace_back(cmd.use_multiprocess ? "bitcoin-node" : "bitcoind");
+            args.emplace_back(cmd.use_multiprocess ? "quanta-node" : "quantad");
         } else if (cmd.command == "rpc") {
-            args.emplace_back("bitcoin-cli");
+            args.emplace_back("quanta-cli");
             // Since "bitcoin rpc" is a new interface that doesn't need to be
             // backward compatible, enable -named by default so it is convenient
             // for callers to use a mix of named and unnamed parameters. Callers
@@ -82,19 +82,19 @@ int main(int argc, char* argv[])
             // as unnamed parameters.
             args.emplace_back("-named");
         } else if (cmd.command == "wallet") {
-            args.emplace_back("bitcoin-wallet");
+            args.emplace_back("quanta-wallet");
         } else if (cmd.command == "tx") {
-            args.emplace_back("bitcoin-tx");
+            args.emplace_back("quanta-tx");
         } else if (cmd.command == "bench") {
-            args.emplace_back("bench_bitcoin");
+            args.emplace_back("bench_quanta");
         } else if (cmd.command == "chainstate") {
-            args.emplace_back("bitcoin-chainstate");
+            args.emplace_back("quanta-chainstate");
         } else if (cmd.command == "test") {
-            args.emplace_back("test_bitcoin");
+            args.emplace_back("test_quanta");
         } else if (cmd.command == "test-gui") {
-            args.emplace_back("test_bitcoin-qt");
+            args.emplace_back("test_quanta-qt");
         } else if (cmd.command == "util") {
-            args.emplace_back("bitcoin-util");
+            args.emplace_back("quanta-util");
         } else {
             throw std::runtime_error(strprintf("Unrecognized command: '%s'", cmd.command));
         }

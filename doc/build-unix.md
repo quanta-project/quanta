@@ -1,6 +1,6 @@
 UNIX BUILD NOTES
 ====================
-Some notes on how to build Bitcoin Core in Unix.
+Some notes on how to build Quanta Core in Unix.
 
 (For BSD specific instructions, see `build-*bsd.md` in this directory.)
 
@@ -20,7 +20,7 @@ distributions](#linux-distribution-specific-instructions), or the
 ## Memory Requirements
 
 C++ compilers are memory-hungry. It is recommended to have at least 1.5 GB of
-memory available when compiling Bitcoin Core. On systems with less, gcc can be
+memory available when compiling Quanta Core. On systems with less, gcc can be
 tuned to conserve memory with additional `CMAKE_CXX_FLAGS`:
 
 
@@ -54,7 +54,7 @@ SQLite is required for the descriptor wallet:
 
     sudo apt install libsqlite3-dev
 
-To build Bitcoin Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode)
+To build Quanta Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode)
 
 ZMQ dependencies (provides ZMQ API):
 
@@ -71,7 +71,7 @@ Skip if you do not need IPC functionality.
 
 GUI dependencies:
 
-Bitcoin Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install
+Quanta Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install
 the necessary parts of Qt, the libqrencode and pass `-DBUILD_GUI=ON`. Skip if you don't intend to use the GUI.
 
     sudo apt-get install qt6-base-dev qt6-tools-dev qt6-l10n-tools qt6-tools-dev-tools libgl-dev
@@ -105,7 +105,7 @@ SQLite is required for the descriptor wallet:
 
     sudo dnf install sqlite-devel
 
-To build Bitcoin Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode)
+To build Quanta Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode)
 
 ZMQ dependencies (provides ZMQ API):
 
@@ -122,7 +122,7 @@ Skip if you do not need IPC functionality.
 
 GUI dependencies:
 
-Bitcoin Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install
+Quanta Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install
 the necessary parts of Qt, the libqrencode and pass `-DBUILD_GUI=ON`. Skip if you don't intend to use the GUI.
 
     sudo dnf install qt6-qtbase-devel qt6-qttools-devel
@@ -147,7 +147,7 @@ not use the packages of your Linux distribution.
 
 Disable-wallet mode
 --------------------
-When the intention is to only run a P2P node, without a wallet, Bitcoin Core can
+When the intention is to only run a P2P node, without a wallet, Quanta Core can
 be compiled in disable-wallet mode with:
 
     cmake -B build -DENABLE_WALLET=OFF
@@ -168,11 +168,11 @@ Setup and Build Example: Arch Linux
 This example lists the steps necessary to setup and build a command line only distribution of the latest changes on Arch Linux:
 
     pacman --sync --needed cmake boost gcc git libevent make python sqlite
-    git clone https://github.com/bitcoin/bitcoin.git
-    cd bitcoin/
+    git clone https://github.com/quanta-project/quanta.git
+    cd quanta/
     cmake -B build
     cmake --build build
     ctest --test-dir build
-    ./build/bin/bitcoind
-    ./build/bin/bitcoin help
+    ./build/bin/quantad
+    ./build/bin/quanta help
 

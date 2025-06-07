@@ -1,6 +1,6 @@
-# Support for Output Descriptors in Bitcoin Core
+# Support for Output Descriptors in Quanta Core
 
-Since Bitcoin Core v0.17, there is support for Output Descriptors. This is a
+Since Quanta Core v0.17, there is support for Output Descriptors. This is a
 simple language which can be used to describe collections of output scripts.
 Supporting RPCs are:
 - `scantxoutset` takes as input descriptors to scan for, and also reports
@@ -25,7 +25,7 @@ Supporting RPCs are:
   by `scanblocks`) and returns rich event data related to spends or receives associated
   with the given descriptors.
 
-Bitcoin Core v24 extended `wsh()` output descriptor with [Miniscript](https://bitcoin.sipa.be/miniscript/) support (initially watch-only). Signing support for Miniscript descriptors was added in v25. And since v26 Miniscript expressions can now be used in Taproot descriptors.
+Quanta Core v24 extended `wsh()` output descriptor with [Miniscript](https://bitcoin.sipa.be/miniscript/) support (initially watch-only). Signing support for Miniscript descriptors was added in v25. And since v26 Miniscript expressions can now be used in Taproot descriptors.
 
 This document describes the language. For the specifics on usage, see the RPC
 documentation for the functions mentioned above.

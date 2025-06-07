@@ -1,1 +1,1 @@
-See [doc/build-\*.md](/doc)
+Check [doc/build-\*.md](/doc) 

@@ -241,10 +241,10 @@ jobs:
         if: matrix.job-type == 'standard'
         working-directory: build
         run: |
-          mt.exe -nologo -inputresource:bin/Release/bitcoind.exe -out:bitcoind.manifest
+          mt.exe -nologo -inputresource:bin/Release/quantad.exe -out:bitcoind.manifest
           cat bitcoind.manifest
           echo
-          mt.exe -nologo -inputresource:bin/Release/bitcoind.exe -validate_manifest
+          mt.exe -nologo -inputresource:bin/Release/quantad.exe -validate_manifest
 
       - name: Run test suite
         if: matrix.job-type == 'standard'
@@ -353,8 +353,8 @@ jobs:
         with:
           name: x86_64-w64-mingw32-executables-${{ github.run_id }}
 
-      - name: Run bitcoind.exe
-        run: ./bin/bitcoind.exe -version
+      - name: Run quantad.exe
+        run: ./bin/quantad.exe -version
 
       - name: Find mt.exe tool
         shell: pwsh
@@ -366,9 +366,9 @@ jobs:
       - name: Get bitcoind manifest
         shell: pwsh
         run: |
-          & $env:MT_EXE -nologo -inputresource:bin\bitcoind.exe -out:bitcoind.manifest
+          & $env:MT_EXE -nologo -inputresource:bin\quantad.exe -out:bitcoind.manifest
           Get-Content bitcoind.manifest
-          & $env:MT_EXE -nologo -inputresource:bin\bitcoind.exe -validate_manifest
+          & $env:MT_EXE -nologo -inputresource:bin\quantad.exe -validate_manifest
 
       - name: Run unit tests
         # Can't use ctest here like other jobs as we don't have a CMake build tree.

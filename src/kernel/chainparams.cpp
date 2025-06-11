@@ -71,8 +71,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Meet the Financial system of the Future, The Times June 2025 A new chain begins";
-    const CScript genesisOutputScript = CScript() << "04cfddc26c42798ea0be539b4fd4a786805f3f0ba5ba00d0fb9e7d0518a0ad836962910eeb7f8e3a235e1b487e6ebcdde68c843da5525fc321233b449c2dd755a5"_hex << OP_CHECKSIG;
+    const char* pszTimestamp = "Meet the Financial system of the Future, The Times May 2025 A new chain begins";
+    const CScript genesisOutputScript = CScript() << "049e49d81b32c2d2cb86a645d52083b91654213ec7acdd3e393ff63c38fca0d39dd818e78683546ea803b23e4938f1ed8f3ed2a4b70a1933871c9f7edefbd6d564"_hex << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -122,19 +122,19 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x9f;
-        pchMessageStart[1] = 0xa8;
-        pchMessageStart[2] = 0xd3;
-        pchMessageStart[3] = 0xce;
-        nDefaultPort = 10333;
+        pchMessageStart[0] = 0xe3;
+        pchMessageStart[1] = 0xc1;
+        pchMessageStart[2] = 0xd4;
+        pchMessageStart[3] = 0xa7;
+        nDefaultPort = 59333;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 720;
         m_assumed_chain_state_size = 14;
 
-        genesis = CreateGenesisBlock(1748736000, 254893868, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1749275400, 3466989765, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256{"000000003ea5a71a573f4be4a8d148cedf48b8076ecfc609bb37f8a7c254cc96"});
-        assert(genesis.hashMerkleRoot == uint256{"40a1cc443c81db1b0b08d715f5f5d045859e6ac0ef34be5eafa37f9d1818142c"});
+        assert(consensus.hashGenesisBlock == uint256{"0000000088145d4b2b7b01ed6eeb3f9212a1212b2a5eecdda1bb67fe30fb10f3"});
+        assert(genesis.hashMerkleRoot == uint256{"02a15ab21dcd2f0fa65649a837ba4fd8ac3b94378cb268168633cf707e1e7892"});
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -148,8 +148,8 @@ public:
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,125);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,210);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x4F};
+        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAE, 0x3C};
 
         bech32_hrp = "qnt";
 

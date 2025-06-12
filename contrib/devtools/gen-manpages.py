@@ -9,12 +9,12 @@ import tempfile
 import argparse
 
 BINARIES = [
-'bin/bitcoind',
-'bin/bitcoin-cli',
-'bin/bitcoin-tx',
-'bin/bitcoin-wallet',
-'bin/bitcoin-util',
-'bin/bitcoin-qt',
+'bin/quantad',
+'bin/quanta-cli',
+'bin/quanta-tx',
+'bin/quanta-wallet',
+'bin/quanta-util',
+'bin/quanta-qt',
 ]
 
 parser = argparse.ArgumentParser(

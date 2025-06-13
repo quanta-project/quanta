@@ -381,7 +381,7 @@ jobs:
           ./src/univalue/unitester.exe
 
       - name: Run benchmarks
-        run: ./bin/bench_bitcoin.exe -sanity-check
+        run: ./bin/bench_quanta.exe -sanity-check
 
       - name: Adjust paths in test/config.ini
         shell: pwsh

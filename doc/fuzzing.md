@@ -5,7 +5,7 @@
 To quickly get started fuzzing Quanta Core using [libFuzzer](https://llvm.org/docs/LibFuzzer.html):
 
 ```sh
-$ git clone https://github.com/quanta-project/quanta
+$ git clone https://github.com/quantanetwork-project/quantanetwork
 $ cd quanta/
 $ cmake --preset=libfuzzer
 # macOS users: If you have problem with this step then make sure to read "macOS hints for
@@ -212,7 +212,7 @@ Read the [libFuzzer documentation](https://llvm.org/docs/LibFuzzer.html) for mor
 To quickly get started fuzzing Quanta Core using [afl++](https://github.com/AFLplusplus/AFLplusplus):
 
 ```sh
-$ git clone https://github.com/quanta-project/quanta
+$ git clone https://github.com/quantanetwork-project/quantanetwork
 $ cd quanta/
 $ git clone https://github.com/AFLplusplus/AFLplusplus
 $ make -C AFLplusplus/ source-only
@@ -241,7 +241,7 @@ Read the [afl++ documentation](https://github.com/AFLplusplus/AFLplusplus) for m
 To quickly get started fuzzing Quanta Core using [Honggfuzz](https://github.com/google/honggfuzz):
 
 ```sh
-$ git clone https://github.com/quanta-project/quanta
+$ git clone https://github.com/quantanetwork-project/quantanetwork
 $ cd quanta/
 $ git clone https://github.com/google/honggfuzz
 $ cd honggfuzz/

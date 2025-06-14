@@ -151,7 +151,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x4F};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAE, 0x3C};
 
-        bech32_hrp = "qnt";
+        bech32_hrp = "qta";
 
         vFixedSeeds = std::vector<uint8_t>(std::begin(chainparams_seed_main), std::end(chainparams_seed_main));
 
@@ -574,7 +574,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "qntrt";
+        bech32_hrp = "qtart";
     }
 };
 

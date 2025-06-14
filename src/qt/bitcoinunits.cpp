@@ -31,9 +31,9 @@ QList<BitcoinUnit> BitcoinUnits::availableUnits()
 QString BitcoinUnits::longName(Unit unit)
 {
     switch (unit) {
-    case Unit::BTC: return QString("QNT");
-    case Unit::mBTC: return QString("mQNT");
-    case Unit::uBTC: return QString::fromUtf8("µQNT (quats)");
+    case Unit::BTC: return QString("QTA");
+    case Unit::mBTC: return QString("mQTA");
+    case Unit::uBTC: return QString::fromUtf8("µQTA (quats)");
     case Unit::SAT: return QString("Takeshi (tak)");
     } // no default case, so the compiler can warn about missing cases
     assert(false);

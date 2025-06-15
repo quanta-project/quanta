@@ -474,3 +474,4 @@ void WalletTests::walletTests()
 #endif
     TestGUI(m_node);
 }
+

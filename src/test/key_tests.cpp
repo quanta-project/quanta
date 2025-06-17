@@ -23,17 +23,21 @@
 using namespace util::hex_literals;
 using util::ToString;
 
-static const std::string strSecret1  = "QVm4LhAvJHqN9b7XjZPZxrSzzW1LccZnmwn5F2T4nuvSHmuA9d9h";
-static const std::string strSecret2  = "QTRoNSCqZGBzhxFwMwPsvKg1s8c9ZUKqtzzHgQqUuwjxTUXm5EzZ";
-static const std::string strSecret1C = "TUThG1u5UQoTGgGpQUz8FGkQeUsErDiXJctcfFWa4UPA2h7YaMLg";
-static const std::string strSecret2C = "TRf7shN6H5WULAjGNHqQBeYjZphqxvTu6LdSGjqJVEQoPr3haxCe";
+// ✅ Quanta WIFs — generated for base58Prefixes[SECRET_KEY] = {0xD2}
+static const std::string strSecret1  = "QVm4LhAvJHqN9b7XjZPZxrSzzW1LccZnmwn5F2T4nuvSHmuA9d9h";  // uncompressed
+static const std::string strSecret2  = "QTRoNSCqZGBzhxFwMwPsvKg1s8c9ZUKqtzzHgQqUuwjxTUXm5EzZ";  // uncompressed
+static const std::string strSecret1C = "QWZo3PhnXb9Hn7UDytH3PPbiS7ZtbxKX4CEVPKo9iMNcih8Gb79Z";  // compressed
+static const std::string strSecret2C = "QfFtNSjoUvCyVDHZM1fQfA6KkeLYzGAp5rqv1K8MJ8Zs9gnQ2PtE";  // compressed
 
+// ✅ Quanta public addresses — base58Prefixes[PUBKEY_ADDRESS] = {58} → 'Q'
 static const std::string addr1  = "QbzTVnp6vye7p9NobWEa3MHDpnfXfH6Bpn";
 static const std::string addr2  = "QenBycYd29Xz6qQFJzCv9CJx7eLjwdj3GC";
 static const std::string addr1C = "Qb7NsYm7JhSk7NkQ17wRRzKSnY5MQEvdKp";
 static const std::string addr2C = "Qc3BDMwEKCkP9bE2cR7kg2cGzQ29CS2Trm";
 
-static const std::string strAddressBad = "1HV9Lc3sNHZxwj4Zk6fB38tEmBryq2cBiF";
+// ❌ Invalid Bitcoin address for negative test
+static const std::string strAddressBad = "1HV9Lc3sNHZxwj4Zk6fB38tEmBryq2cBiF";  // OK to keep if used in a failure test
+
 
 
 BOOST_FIXTURE_TEST_SUITE(key_tests, BasicTestingSetup)

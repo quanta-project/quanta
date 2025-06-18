@@ -58,7 +58,7 @@ Now that all the required dependencies are installed, let's clone the Quanta Cor
 All build scripts and commands will run from this directory.
 
 ``` bash
-git clone https://github.com/quantanetwork-project/quantanetwork.git
+git clone https://github.com/quanta-project/quanta.git
 ```
 
 ### 5. Install Optional Dependencies

@@ -25,7 +25,7 @@ Download and install [Git for Windows](https://git-scm.com/downloads/win). Once 
 
 Clone the Quanta Core repository to a directory. All build scripts and commands will run from this directory.
 ```
-git clone https://github.com/quantanetwork-project/quantanetwork.git
+git clone https://github.com/quanta-project/quanta.git
 ```
 
 

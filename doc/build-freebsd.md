@@ -18,7 +18,7 @@ See [dependencies.md](dependencies.md) for a complete overview.
 ### 2. Clone Quanta Repo
 Now that `git` and all the required dependencies are installed, let's clone the Quanta Core repository to a directory. All build scripts and commands will run from this directory.
 ```bash
-git clone https://github.com/quantanetwork-project/quantanetwork.git
+git clone https://github.com/quanta-project/quanta.git
 ```
 
 ### 3. Install Optional Dependencies
